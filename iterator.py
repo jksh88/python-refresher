@@ -14,4 +14,6 @@ class Series(object):
       return self.current - 1
 
 n_list = Series(1, 10)
+print(type(n_list))
+print(n_list)
 print(list(n_list))
