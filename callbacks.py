@@ -17,3 +17,7 @@ for i in listOfTuples:
 numList = range(-3,3)
 negative = list(filter(lambda a: a < 0, numList))
 print(negative)
+
+from functools import reduce
+product = reduce((lambda x, y: x * y), [2,3,4])
+print(product)
