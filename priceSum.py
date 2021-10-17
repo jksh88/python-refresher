@@ -1,18 +1,22 @@
 class Store:
-  def __init__(self, name):
-    self.name = name
+  def __init__(self):
+    # self.name = name
     self.items = []
 
   def add_item(self, name, price):
-    self.items.append({self.name: self.price})
+    # self.name = name
+    # self.price = price
+    self.items.append({'name': name, 'price': price})
 
   def stock_price(self):
     total = 0
-    for price in self.items[self.name]:
-      total += price
-    return price
+    for item in self.items:
+      total += item['price']
+    return total
 
   
-grocery = Store("Target")
+grocery = Store()
 grocery.add_item('bananas', 8)
 grocery.add_item('shoes', 30)
+total = grocery.stock_price()
+print(total)
