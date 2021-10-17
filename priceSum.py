@@ -16,22 +16,26 @@ class Store:
 
   # @classmethod
   # def franchise(self):
-    # return f"{self.name} - franchise"
+  #   return f"{self.name} - franchise"
   
   @classmethod
-  def franchise(cls, name):
-    return f"{Store.store_details(name)} - franchise"
+  def franchise(cls, store):
+    new_store = cls(store.name + " - franchise")
+    return new_store
+    # return f"{Store.store_details(name)} - franchise"
 
   @staticmethod
   def store_details(store):
-    return Store.__str__(store)
+    return f"{store.name}, total stock price: {store.stock_price()}"
   
 target = Store("Target")
 amazon = Store("Amazon")
-# target.add_item('bananas', 8)
-# target.add_item('shoes', 30)
-# total = target.stock_price()
-# print(total)
-print(target.franchise("Target"))
+target.add_item('bananas', 8)
+target.add_item('shoes', 30)
+total = target.stock_price()
+print(total)
+print(Store.franchise(target))
 print(target)
-print(Store.store_details("Target"))
+print(Store.store_details(target))
+print(Store.store_details(target))
+# print(Store.store_details("Target"))
